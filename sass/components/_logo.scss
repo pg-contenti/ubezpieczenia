@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__studio {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-style: bold;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: $specialColor;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      left: 115px;
+    }
+
+    @media (min-width: 1200px) {
+      align-items: flex-start;
+      font-size: 26px;
+    }
+
+    &--black {
+      color: $primaryColor;
+    }
+
+    &--white {
+      color: $secondaryColorWhite;
+      margin-left: 0;
+    }
+  }
+}

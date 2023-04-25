@@ -1,0 +1,234 @@
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+}
+
+.is-hidden .modal {
+  transform: translateY(-150%);
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition-property: opacity, visibility;
+  transition-duration: $transitionDurationDefault;
+  transition-timing-function: ease-out;
+}
+
+textarea {
+  width: 416px;
+  height: 96px;
+  font-size: 12px;
+  color: rgba(117, 117, 117, 0.5);
+  letter-spacing: 0.01em;
+  padding: 16px 12px 16px 12px;
+}
+
+.modal {
+  position: relative;
+  max-width: 450px;
+  max-height: 609px;
+  padding: 40px;
+  background-color: $secondaryColorWhite;
+  transform: translateY(0);
+  border-radius: 4px;
+  transition: transform $transitionDurationDefault $transitionsFunctionDefault;
+
+  @media (min-width: 1200px) {
+    min-width: 528px;
+    min-height: 581px;
+  }
+
+  &__button-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $secondaryColorWhite;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__title-form {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    color: $primaryColor;
+    margin-bottom: 12px;
+  }
+  &__form-label {
+    display: block;
+    position: relative;
+    color: $secondaryColorGrey;
+    font-size: 12px;
+    margin-bottom: 28px;
+    width: 370px;
+    height: 40px;
+
+    @media (min-width: 1200px) {
+      width: 448px;
+    }
+  }
+
+  &__form-icon {
+    position: absolute;
+    top: 27px;
+    left: 13px;
+  }
+  &__form-input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    margin-top: 4px;
+    padding-left: 40px;
+    transition-property: border;
+    transition-duration: $transitionDurationDefault;
+    transition-timing-function: $transitionsFunctionDefault;
+  }
+
+  &__form-label &__form-icon {
+    transition-property: fill;
+    transition-duration: $transitionDurationDefault;
+    transition-timing-function: $transitionsFunctionDefault;
+  }
+
+  &__form-input:focus {
+    border-color: $specialColor;
+    outline: none;
+  }
+
+  &__form-input:focus {
+    fill: $primaryColor;
+    transition: border-color $transitionsFunctionDefault;
+  }
+
+  &__field-form {
+    display: block;
+    margin-bottom: 20px;
+    font-style: regular;
+    font-size: 12px;
+    line-height: 14px;
+    color: $secondaryColorGrey;
+    text-align: start;
+  }
+
+  &__comment-title {
+    display: block;
+    margin-bottom: 20px;
+    font-style: regular;
+    font-size: 12px;
+    line-height: 14px;
+    color: $secondaryColorGrey;
+    text-align: start;
+  }
+
+  &__field-form {
+    width: 370px;
+    height: 120px;
+    border: solid 1px;
+    border-radius: 4px;
+    border-color: rgba(33, 33, 33, 0.2);
+    transition: border-color $transitionDurationDefault
+      $transitionsFunctionDefault;
+
+    @media (min-width: 1200px) {
+      width: 448px;
+    }
+  }
+
+  &__form-label:focus-within &__form-icon {
+    fill: $specialColor;
+  }
+
+  &__field-form:focus {
+    border-color: $specialColor;
+  }
+  &__checkbox {
+    display: flex;
+    gap: 7px;
+    position: relative;
+    cursor: pointer;
+
+    margin-bottom: 30px;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 1200px) {
+      margin-left: 14px;
+    }
+  }
+  &__checkbox-oryginal {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__checkbox-icon {
+    transition-duration: $transitionDurationDefault;
+    transition-timing-function: $transitionsFunctionDefault;
+    fill: $secondaryColorWhite;
+    border: 1px solid $primaryColor;
+    border-radius: 2px;
+  }
+
+  &__checkbox-oryginal:checked + &__checkbox-icon {
+    background-color: $specialColor;
+    border-color: $specialColor;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    color: $secondaryColorGrey;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 1200px) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__text-accept {
+    color: $specialColor;
+    text-decoration: underline;
+  }
+
+  &__button-submit {
+    width: 200px;
+    height: 50px;
+    background-color: $specialColor;
+    color: $secondaryColorWhite;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: $transitionDurationDefault $transitionsFunctionDefault;
+    position: relative;
+    margin-left: 85px;
+
+    @media (min-width: 1200px) {
+      margin-left: 125px;
+    }
+  }
+
+  &__button-submit:hover,
+  &__button-submit:focus {
+    transform: scale(1.1);
+  }
+}

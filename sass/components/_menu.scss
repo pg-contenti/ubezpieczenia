@@ -1,0 +1,121 @@
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 796px;
+  height: 100vh;
+  background-color: $secondaryColorWhite;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
+  transform: translateX(100%);
+  transition: transform $transitionDurationDefault ease-in-out;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu .menu-toggle {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: black;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: $specialColor;
+}
+
+.mobile-menu__link {
+  list-style-type: none;
+  margin-left: 40px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  gap: 36px;
+}
+
+.mobile-menu__link--item {
+  font-size: 40px;
+  color: $footerFillingColor;
+  text-decoration: none;
+}
+
+.mobile-menu__link--item:hover,
+.mobile-menu__link--item:focus {
+  color: $specialColor;
+}
+
+.mobile-menu__address {
+  font-size: 34px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-left: 40px;
+  margin-bottom: 32px;
+  gap: 32px;
+  margin-top: 302px;
+  color: $secondaryColorGrey;
+}
+
+.mobile-menu__phone {
+  font-size: 34px;
+  color: $specialColor;
+  text-decoration: none;
+}
+
+.mobile-menu__mail {
+  font-size: 24px;
+  color: $secondaryColorGrey;
+  text-decoration: none;
+  margin-bottom: 64px;
+}
+
+.mobile-menu__social {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+  color: $specialColor;
+}
+
+.mobile-menu__social--item {
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-menu__social__link {
+  list-style: none;
+  font-size: 18px;
+  line-height: 1.22;
+  color: $specialColor;
+  text-decoration: none;
+  display: inline-block;
+}
